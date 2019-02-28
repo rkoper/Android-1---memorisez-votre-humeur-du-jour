@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Controller.History">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/activityhistory_mood1_left"
+            android:background="#00ff00"
+            android:layout_weight="20"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/buttonComment1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_comment_black_48px"
+                android:text="Button"
+                android:contentDescription="TODO" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/activiy_history_mood1_right"
+            android:layout_weight="80"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/activity_history_mood2_left"
+            android:background="#00ff00"
+            android:layout_weight="20"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/buttonComment2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button"
+                android:src="@drawable/ic_comment_black_48px"
+                android:contentDescription="TODO" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/activiy_history_mood2_right"
+            android:layout_weight="80"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/activity_history_mood3_left"
+            android:background="#00ff00"
+            android:layout_weight="20"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/buttonComment3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button"
+                android:src="@drawable/ic_comment_black_48px"
+                android:contentDescription="TODO" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/activiy_history_mood3_right"
+            android:layout_weight="80"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/activity_history_mood4_left"
+            android:background="#00ff00"
+            android:layout_weight="20"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/buttonComment4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:src="@drawable/ic_comment_black_48px"
+            android:contentDescription="TODO" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/activiy_history_mood4_right"
+            android:layout_weight="80"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/activity_history_mood5_left"
+            android:background="#00ff00"
+            android:layout_weight="20"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/buttonComment5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:src="@drawable/ic_comment_black_48px"
+            android:contentDescription="TODO" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/activiy_history_mood5_right"
+            android:layout_weight="80"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/activity_history_mood6_left"
+            android:background="#00ff00"
+            android:layout_weight="20"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/buttonComment6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button"
+                android:src="@drawable/ic_comment_black_48px"
+                android:contentDescription="TODO" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/activiy_history_mood6_right"
+            android:layout_weight="80"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/activity_history_mood7_left"
+            android:background="#00ff00"
+            android:layout_weight="20"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/buttonComment7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button"
+                android:src="@drawable/ic_comment_black_48px"
+                android:contentDescription="TODO" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/activiy_history_mood7_right"
+            android:layout_weight="80"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

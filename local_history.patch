@@ -1,0 +1,26 @@
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_main.xml	(date 1549372444000)
++++ app/src/main/res/layout/activity_main.xml	(date 1549372444000)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<LinearLayout
++<RelativeLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+@@ -32,7 +32,8 @@
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="330dp"
+         android:layout_marginTop="580dp"
++        android:layout_weight="300"
+         android:contentDescription="@android:string/ok"
+         android:src="@drawable/ic_history_black" />
+ 
+-</LinearLayout>
+\ No newline at end of file
++</RelativeLayout>
+\ No newline at end of file
