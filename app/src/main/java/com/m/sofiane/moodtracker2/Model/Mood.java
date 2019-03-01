@@ -1,12 +1,9 @@
 package com.m.sofiane.moodtracker2.Model;
 
-import com.m.sofiane.moodtracker2.Controller.MainActivity;
-
-
 /**
  * created by Sofiane M. 07/02/2019
  */
-public class Mood extends MainActivity {
+public class Mood  {
     public int mImages;
     public int mColors;
     public String mComment;

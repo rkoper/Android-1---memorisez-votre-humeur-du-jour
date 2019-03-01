@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import com.google.gson.Gson;
 import com.m.sofiane.moodtracker2.Model.Mood;
 import com.m.sofiane.moodtracker2.R;
@@ -35,31 +36,29 @@ public class MainActivity extends AppCompatActivity {
     private Mood mColors;
     private Mood mImages;
 
-
-
-
     @Override
  public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mPrefs = getPreferences(MODE_PRIVATE);
+        mPrefs = getSharedPreferences("Mypreferences", MODE_PRIVATE);
         mViewPager = findViewById(R.id.viewpager);
         myadapter = new SlideAdapter(this);
         mViewPager.setAdapter(myadapter);
-        final Gson gson = new Gson();
-        final String json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR),"");
+        Gson gson = new Gson();
+        String json = mPrefs.getString("" + mCal.get(Calendar. DAY_OF_YEAR),"");
         mMood = gson.fromJson(json, Mood.class);
-
-
+        if (mMood == null) {
+            mMood = new Mood(R.drawable.smiley_happy,R.color.light_sage,"",0);
+        }
 
         final Mood[] lst_smileys = {
-                new Mood(R.drawable.smiley_happy,Color.rgb(255, 255, 255),"",0),
-                new Mood(R.drawable.smiley_normal,Color.rgb(255, 255, 5),"",1),
-                new Mood(R.drawable.smiley_disappointed,Color.rgb(237, 127, 16),"",2),
-                new Mood(R.drawable.smiley_sad,Color.rgb(255, 0, 0),"",3),
-                new Mood(R.drawable.smiley_super_happy,Color.rgb(255, 0, 127),"",4),
+                new Mood(R.drawable.smiley_happy, Color.rgb(188, 233, 134), "", 0),
+                new Mood(R.drawable.smiley_normal, Color.rgb(70, 138, 217), "", 1),
+                new Mood(R.drawable.smiley_disappointed, Color.rgb(155, 155, 155), "", 2),
+                new Mood(R.drawable.smiley_sad, Color.rgb(222, 60, 80), "", 3),
+                new Mood(R.drawable.smiley_super_happy, Color.rgb(249, 236, 79), "", 4)
         };
-
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
@@ -70,13 +69,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int positionOfMood) {
 
-
                 Calendar mCal = Calendar.getInstance();
-                if (mMood == null) {
-                    gson.fromJson(json, Mood.class);
-                }
 
-                else {
                 mMood.mPositionOfMood=lst_smileys[positionOfMood].getPositionOfMood();
                 mMood.mColors= lst_smileys[positionOfMood].getColors();
                 mMood.mImages = lst_smileys[positionOfMood].getImages();
@@ -85,21 +79,17 @@ public class MainActivity extends AppCompatActivity {
                 Gson gson = new Gson();
                 String json = gson.toJson(mMood);
                 prefsEditor.putString("" + mCal.get(Calendar.DAY_OF_YEAR),json);
-                prefsEditor.commit();
-
-            } }
+                prefsEditor.apply();
+            }
 
             @Override
             public void onPageScrollStateChanged(int i) {
             }
-
-
         });
 
         mButton1 =  findViewById(R.id.Button1);
 
 // Call PopUP
-
 
         AlertDialog.Builder builder= new AlertDialog.Builder(this);
         builder.setTitle(R.string.your_mood);
@@ -112,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-
                 String mTxt = mComment.getText().toString();
                 Toast.makeText(getApplicationContext(),mTxt, Toast.LENGTH_LONG).show();
                 mMood.mComment = mTxt;
@@ -120,19 +109,14 @@ public class MainActivity extends AppCompatActivity {
                 Gson gson = new Gson();
                 String json = gson.toJson(mMood);
                 prefsEditor.putString("" + mCal.get(Calendar.DAY_OF_YEAR),json);
-                prefsEditor.commit();
+                prefsEditor.apply();
             }
-
-
-
         });
 
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-
-
             }
         });
 
@@ -154,13 +138,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent historyActivityIntent = new Intent(MainActivity.this, History.class);
                 startActivity(historyActivityIntent);
-
             }
-
         });
-
     }
-
 }
 
 

@@ -26,11 +26,11 @@ public class SlideAdapter extends PagerAdapter {
     }
 
     public Mood[] lst_smileys = {
-            new Mood(R.drawable.smiley_happy, Color.rgb(255, 255, 255), "", 0),
-            new Mood(R.drawable.smiley_normal, Color.rgb(255, 255, 5), "", 1),
-            new Mood(R.drawable.smiley_disappointed, Color.rgb(237, 127, 16), "", 2),
-            new Mood(R.drawable.smiley_sad, Color.rgb(255, 0, 0), "", 3),
-            new Mood(R.drawable.smiley_super_happy, Color.rgb(255, 0, 127), "", 4)
+            new Mood(R.drawable.smiley_happy, Color.rgb(188,233,134), "", 0),
+            new Mood(R.drawable.smiley_normal, Color.rgb(70,138 , 217), "", 1),
+            new Mood(R.drawable.smiley_disappointed, Color.rgb(155, 155, 155), "", 2),
+            new Mood(R.drawable.smiley_sad, Color.rgb(222 , 60, 80), "", 3),
+            new Mood(R.drawable.smiley_super_happy, Color.rgb(249, 236, 79), "", 4)
 };
 
 

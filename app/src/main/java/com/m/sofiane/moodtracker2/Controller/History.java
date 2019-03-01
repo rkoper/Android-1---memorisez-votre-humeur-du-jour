@@ -75,57 +75,57 @@ public class History extends AppCompatActivity{
         FrameLayout mRl71 = this.findViewById(R.id.activity_history_mood7_left);
         FrameLayout mRl72 = this.findViewById(R.id.activiy_history_mood7_right);
 
-        mPrefs = getPreferences(MODE_PRIVATE);
+        mPrefs = getSharedPreferences("My preference", MODE_PRIVATE);
         Gson gson = new Gson();
-        String json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR), "");
+        String json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR-1), "");
         mMood = gson.fromJson(json, Mood.class);
         if (mMood == null) {
             mRl11.setVisibility(INVISIBLE);
             mRl12.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 1), "");
+        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 2), "");
         mMood1 = gson.fromJson(json, Mood.class);
         if (mMood == null) {
             mRl21.setVisibility(INVISIBLE);
             mRl22.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 2), "");
+        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 3), "");
         mMood2 = gson.fromJson(json, Mood.class);
         if (mMood == null) {
             mRl31.setVisibility(INVISIBLE);
             mRl32.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 3), "");
+        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 4), "");
         mMood3 = gson.fromJson(json, Mood.class);
         if (mMood == null) {
             mRl41.setVisibility(INVISIBLE);
             mRl42.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 4), "");
+        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 5), "");
         mMood4 = gson.fromJson(json, Mood.class);
         if (mMood == null) {
             mRl51.setVisibility(INVISIBLE);
             mRl52.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 5), "");
+        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 6), "");
         mMood5 = gson.fromJson(json, Mood.class);
         if (mMood == null) {
             mRl61.setVisibility(INVISIBLE);
             mRl62.setVisibility(INVISIBLE);
          }
 
-        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 6), "");
+       /* json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 7), "");
         mMood6 = gson.fromJson(json, Mood.class);
         if (mMood == null) {
             mRl71.setVisibility(INVISIBLE);
             mRl72.setVisibility(INVISIBLE);
         }
-
+*/
         ChangeOfLayout(mRl11,mRl12,mMood);
         ChangeOfLayout(mRl21,mRl22,mMood1);
         ChangeOfLayout(mRl31,mRl32,mMood2);
@@ -148,35 +148,35 @@ public class History extends AppCompatActivity{
         switch (mood.getPositionOfMood()) {
 
             case 0:
-                mLeft.setBackgroundColor(Color.rgb(255, 255, 255));
+                mLeft.setBackgroundColor(Color.rgb(188, 233, 134));
                 mLayoutParamsLeft.width = 0;
                 mLayoutParamsLeft.weight = 75;
                 mLeft.setLayoutParams(mLayoutParamsLeft);
                 break;
 
             case 1:
-                mLeft.setBackgroundColor(Color.rgb(255, 255, 5));
+                mLeft.setBackgroundColor(Color.rgb(70, 138, 217));
                 mLayoutParamsLeft.width = 0;
                 mLayoutParamsLeft.weight = 50;
                 mLeft.setLayoutParams(mLayoutParamsLeft);
                 break;
 
             case 2:
-                mLeft.setBackgroundColor(Color.rgb(237, 127, 16));
+                mLeft.setBackgroundColor(Color.rgb(155, 155, 155));
                 mLayoutParamsLeft.width = 0;
                 mLayoutParamsLeft.weight = 25;
                 mLeft.setLayoutParams(mLayoutParamsLeft);
                 break;
 
             case 3:
-                mLeft.setBackgroundColor(Color.rgb(255, 0, 0));
+                mLeft.setBackgroundColor(Color.rgb(222, 60, 80));
                 mLayoutParamsLeft.width = 0;
                 mLayoutParamsLeft.weight = 0;
                 mLeft.setLayoutParams(mLayoutParamsLeft);
                 break;
 
             case 4:
-                mLeft.setBackgroundColor(Color.rgb(255, 0, 127));
+                mLeft.setBackgroundColor(Color.rgb(249, 236, 79));
                 mLayoutParamsLeft.width = 0;
                 mLayoutParamsLeft.weight = 100;
                 mLeft.setLayoutParams(mLayoutParamsLeft);
@@ -186,35 +186,35 @@ public class History extends AppCompatActivity{
 
         switch (mood.getPositionOfMood()) {
             case 0:
-                mRight.setBackgroundColor(Color.rgb(255, 255, 255));
+                mRight.setBackgroundColor(Color.rgb(188, 233, 134));
                 mLayoutParamsRight.width = 0;
                 mLayoutParamsRight.weight = 25;
                 mRight.setLayoutParams(mLayoutParamsLeft);
                 break;
 
             case 1:
-                mRight.setBackgroundColor(Color.rgb(255, 255, 5));
+                mRight.setBackgroundColor(Color.rgb(70, 138, 217));
                 mLayoutParamsRight.width = 0;
                 mLayoutParamsRight.weight = 50;
                 mRight.setLayoutParams(mLayoutParamsLeft);
                 break;
 
             case 2:
-                mRight.setBackgroundColor(Color.rgb(237, 127, 16));
+                mRight.setBackgroundColor(Color.rgb(155, 155, 155));
                 mLayoutParamsRight.width = 0;
                 mLayoutParamsRight.weight = 75;
                 mRight.setLayoutParams(mLayoutParamsLeft);
                 break;
 
             case 3:
-                mRight.setBackgroundColor(Color.rgb(255, 0, 0));
+                mRight.setBackgroundColor(Color.rgb(222, 60, 80));
                 mLayoutParamsRight.width = 0;
                 mLayoutParamsLeft.weight = 100;
                 mRight.setLayoutParams(mLayoutParamsLeft);
                 break;
 
             case 4:
-                mRight.setBackgroundColor(Color.rgb(255, 0, 127));
+                mRight.setBackgroundColor(Color.rgb(249, 236, 79));
                 mLayoutParamsRight.width = 0;
                 mLayoutParamsLeft.weight = 0;
                 mRight.setLayoutParams(mLayoutParamsLeft);
