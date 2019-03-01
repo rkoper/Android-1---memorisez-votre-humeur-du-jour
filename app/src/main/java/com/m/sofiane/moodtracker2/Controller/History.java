@@ -52,6 +52,8 @@ public class History extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
+        // Initialized Layout of mood
+
         mButtonComment1 = findViewById(R.id.buttonComment1);
         mButtonComment2 = findViewById(R.id.buttonComment2);
         mButtonComment3 = findViewById(R.id.buttonComment3);
@@ -144,6 +146,8 @@ public class History extends AppCompatActivity{
             mLeft.setVisibility(INVISIBLE);
             mRight.setVisibility(INVISIBLE);
         }
+
+        // Size of Layout
         else {
         switch (mood.getPositionOfMood()) {
 

@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             mMood = new Mood(R.drawable.smiley_happy,R.color.light_sage,"",0);
         }
 
+        // initialized Mood + Color + Comment + Position
         final Mood[] lst_smileys = {
                 new Mood(R.drawable.smiley_happy, Color.rgb(188, 233, 134), "", 0),
                 new Mood(R.drawable.smiley_normal, Color.rgb(70, 138, 217), "", 1),
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             public void onPageScrolled(int i, float v, int i1) {
             }
 
+            // Recover Position of Smiley
             @Override
             public void onPageSelected(int positionOfMood) {
 
@@ -98,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
         mComment = new EditText(this);
         builder.setView(mComment);
 
+        // Recover Comment
+
         builder.setPositiveButton(R.string.send, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -121,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final AlertDialog ad= builder.create();
+        // initalized Two button
 
         mButton1 = findViewById(R.id.Button1);
         mButton1.setOnClickListener(new View.OnClickListener() {
@@ -132,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mButton2 =  findViewById(R.id.Button2);
+
+        // Lauch history
 
         mButton2.setOnClickListener(new View.OnClickListener() {
             @Override
