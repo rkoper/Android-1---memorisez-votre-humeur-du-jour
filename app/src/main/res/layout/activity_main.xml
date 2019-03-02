@@ -8,14 +8,14 @@
     tools:ignore="ExtraText">
 
 
-    <com.m.sofiane.moodtracker2.View.VerticalViewPager
+    <com.m.sofiane.moodtracker2.Adapter.VerticalViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"></com.m.sofiane.moodtracker2.View.VerticalViewPager>
+        android:layout_marginTop="0dp"></com.m.sofiane.moodtracker2.Adapter.VerticalViewPager>
 
     <ImageView
         android:id="@+id/Button1"

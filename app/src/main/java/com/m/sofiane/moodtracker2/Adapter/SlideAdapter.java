@@ -1,4 +1,4 @@
-package com.m.sofiane.moodtracker2.View;
+package com.m.sofiane.moodtracker2.Adapter;
 
 import android.content.Context;
 import android.graphics.Color;

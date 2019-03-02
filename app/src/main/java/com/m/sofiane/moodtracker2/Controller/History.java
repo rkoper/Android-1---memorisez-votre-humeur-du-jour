@@ -1,31 +1,28 @@
 package com.m.sofiane.moodtracker2.Controller;
 
-import android.app.MediaRouteButton;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
 import com.google.gson.Gson;
 import com.m.sofiane.moodtracker2.Model.Mood;
 import com.m.sofiane.moodtracker2.R;
+
 import java.util.Calendar;
 
 import static android.view.View.INVISIBLE;
+import static java.util.Calendar.getInstance;
 
 /**
  * created by Sofiane M. 13/02/2019
  */
-public class History extends AppCompatActivity{
-    private MediaRouteButton mRl11;
-    private MediaRouteButton mRl12;
-
-    public History() {}
+public class History extends MainActivity {
 
     private Mood mMood;
     private Mood mMood1;
@@ -34,6 +31,9 @@ public class History extends AppCompatActivity{
     private Mood mMood4;
     private Mood mMood5;
     private Mood mMood6;
+
+
+
 
     private ImageButton mButtonComment1;
     private ImageButton mButtonComment2;
@@ -44,7 +44,7 @@ public class History extends AppCompatActivity{
     private ImageButton mButtonComment7;
 
     protected SharedPreferences mPrefs;
-    private Calendar mCal = Calendar.getInstance();
+    private Calendar mCal = getInstance();
     private EditText mComment;
 
     @Override
@@ -62,6 +62,7 @@ public class History extends AppCompatActivity{
         mButtonComment6 = findViewById(R.id.buttonComment6);
         mButtonComment7 = findViewById(R.id.buttonComment7);
 
+
         FrameLayout mRl11 = this.findViewById(R.id.activityhistory_mood1_left);
         FrameLayout mRl12 = this.findViewById(R.id.activiy_history_mood1_right);
         FrameLayout mRl21 = this.findViewById(R.id.activity_history_mood2_left);
@@ -77,57 +78,57 @@ public class History extends AppCompatActivity{
         FrameLayout mRl71 = this.findViewById(R.id.activity_history_mood7_left);
         FrameLayout mRl72 = this.findViewById(R.id.activiy_history_mood7_right);
 
-        mPrefs = getSharedPreferences("My preference", MODE_PRIVATE);
+        mPrefs = getSharedPreferences("Mypreferences", MODE_PRIVATE);
         Gson gson = new Gson();
-        String json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR-1), "");
+        String json = mPrefs.getString("" + (mCal.get(Calendar.DAY_OF_YEAR)) + 10, "");
         mMood = gson.fromJson(json, Mood.class);
         if (mMood == null) {
             mRl11.setVisibility(INVISIBLE);
             mRl12.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 2), "");
+        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR) + 9, "");
         mMood1 = gson.fromJson(json, Mood.class);
-        if (mMood == null) {
+        if (mMood1 == null) {
             mRl21.setVisibility(INVISIBLE);
             mRl22.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 3), "");
+        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR) + 8, "");
         mMood2 = gson.fromJson(json, Mood.class);
-        if (mMood == null) {
+        if (mMood2 == null) {
             mRl31.setVisibility(INVISIBLE);
             mRl32.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 4), "");
+        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR) + 7, "");
         mMood3 = gson.fromJson(json, Mood.class);
-        if (mMood == null) {
+        if (mMood3 == null) {
             mRl41.setVisibility(INVISIBLE);
             mRl42.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 5), "");
+        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR) + 6, "");
         mMood4 = gson.fromJson(json, Mood.class);
-        if (mMood == null) {
+        if (mMood4 == null) {
             mRl51.setVisibility(INVISIBLE);
             mRl52.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 6), "");
+        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR) + 5, "");
         mMood5 = gson.fromJson(json, Mood.class);
-        if (mMood == null) {
+        if (mMood5 == null) {
             mRl61.setVisibility(INVISIBLE);
             mRl62.setVisibility(INVISIBLE);
          }
 
-       /* json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR - 7), "");
+        json = mPrefs.getString("" + mCal.get(Calendar.DAY_OF_YEAR) + 4, "");
         mMood6 = gson.fromJson(json, Mood.class);
-        if (mMood == null) {
+        if (mMood6 == null) {
             mRl71.setVisibility(INVISIBLE);
             mRl72.setVisibility(INVISIBLE);
         }
-*/
+
         ChangeOfLayout(mRl11,mRl12,mMood);
         ChangeOfLayout(mRl21,mRl22,mMood1);
         ChangeOfLayout(mRl31,mRl32,mMood2);
@@ -142,14 +143,13 @@ public class History extends AppCompatActivity{
         LinearLayout.LayoutParams mLayoutParamsRight = (LinearLayout.LayoutParams) mRight.getLayoutParams();
         LinearLayout.LayoutParams mLayoutParamsLeft = (LinearLayout.LayoutParams) mLeft.getLayoutParams();
 
-        if (mMood==null) {
+        if (mood==null) {
             mLeft.setVisibility(INVISIBLE);
             mRight.setVisibility(INVISIBLE);
         }
-
         // Size of Layout
         else {
-        switch (mood.getPositionOfMood()) {
+        switch (mMood.getPositionOfMood()) {
 
             case 0:
                 mLeft.setBackgroundColor(Color.rgb(188, 233, 134));
@@ -188,7 +188,7 @@ public class History extends AppCompatActivity{
                 default:
         }
 
-        switch (mood.getPositionOfMood()) {
+        switch (mMood.getPositionOfMood()) {
             case 0:
                 mRight.setBackgroundColor(Color.rgb(188, 233, 134));
                 mLayoutParamsRight.width = 0;

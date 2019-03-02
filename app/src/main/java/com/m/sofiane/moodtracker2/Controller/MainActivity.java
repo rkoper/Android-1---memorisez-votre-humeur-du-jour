@@ -14,9 +14,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.m.sofiane.moodtracker2.Adapter.SlideAdapter;
 import com.m.sofiane.moodtracker2.Model.Mood;
 import com.m.sofiane.moodtracker2.R;
-import com.m.sofiane.moodtracker2.View.SlideAdapter;
 
 import java.util.Calendar;
 
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private Mood mColors;
     private Mood mImages;
 
+
     @Override
  public void onCreate(Bundle savedInstanceState) {
 
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         myadapter = new SlideAdapter(this);
         mViewPager.setAdapter(myadapter);
         Gson gson = new Gson();
-        String json = mPrefs.getString("" + mCal.get(Calendar. DAY_OF_YEAR),"");
+        String json = mPrefs.getString("" + (mCal.get(Calendar.DAY_OF_YEAR)) + 11 , "");
         mMood = gson.fromJson(json, Mood.class);
         if (mMood == null) {
             mMood = new Mood(R.drawable.smiley_happy,R.color.light_sage,"",0);
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 new Mood(R.drawable.smiley_sad, Color.rgb(222, 60, 80), "", 3),
                 new Mood(R.drawable.smiley_super_happy, Color.rgb(249, 236, 79), "", 4)
         };
+
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
@@ -80,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences.Editor prefsEditor = mPrefs.edit();
                 Gson gson = new Gson();
                 String json = gson.toJson(mMood);
-                prefsEditor.putString("" + mCal.get(Calendar.DAY_OF_YEAR),json);
+                prefsEditor.putString(("" + mCal.get(Calendar.DAY_OF_YEAR) +10), json);
                 prefsEditor.apply();
             }
 
@@ -112,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences.Editor prefsEditor = mPrefs.edit();
                 Gson gson = new Gson();
                 String json = gson.toJson(mMood);
-                prefsEditor.putString("" + mCal.get(Calendar.DAY_OF_YEAR),json);
+                prefsEditor.putString("" + (mCal.get(Calendar.DAY_OF_YEAR)) + 11, json);
                 prefsEditor.apply();
             }
         });
