@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
@@ -66,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
-            public void onPageScrolled(int i, float v, int i1) {
-            }
+            public void onPageScrolled(int positionFixe, float v, int i1) {
+                                    }
 
             // Recover Position of Smiley
             @Override
@@ -84,7 +85,35 @@ public class MainActivity extends AppCompatActivity {
                 String json = gson.toJson(mMood);
                 prefsEditor.putString(("" + mCal.get(Calendar.DAY_OF_YEAR) +10), json);
                 prefsEditor.apply();
-            }
+
+                MediaPlayer mediaPlayer;
+
+                switch (mMood.getPositionOfMood()) {
+                case 0:
+                mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sound1);
+                mediaPlayer.start();
+                break;
+
+                case 1:
+                mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sound2);
+                mediaPlayer.start();
+                break;
+
+                case 2:
+                mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sound3);
+                mediaPlayer.start();
+                break;
+
+                case 3:
+                mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sound4);
+                mediaPlayer.start();
+                break;
+
+                case 4: mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sound5);
+                mediaPlayer.start();
+                break;
+                default:
+            } }
 
             @Override
             public void onPageScrollStateChanged(int i) {
