@@ -47,6 +47,7 @@ public class History extends MainActivity {
     private Calendar mCal = getInstance();
     private EditText mComment;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,20 +64,20 @@ public class History extends MainActivity {
         mButtonComment7 = findViewById(R.id.buttonComment7);
 
 
-        FrameLayout mRl11 = this.findViewById(R.id.activityhistory_mood1_left);
-        FrameLayout mRl12 = this.findViewById(R.id.activiy_history_mood1_right);
-        FrameLayout mRl21 = this.findViewById(R.id.activity_history_mood2_left);
-        FrameLayout mRl22 = this.findViewById(R.id.activiy_history_mood2_right);
-        FrameLayout mRl31 = this.findViewById(R.id.activity_history_mood3_left);
-        FrameLayout mRl32 = this.findViewById(R.id.activiy_history_mood3_right);
-        FrameLayout mRl41 = this.findViewById(R.id.activity_history_mood4_left);
-        FrameLayout mRl42 = this.findViewById(R.id.activiy_history_mood4_right);
-        FrameLayout mRl51 = this.findViewById(R.id.activity_history_mood5_left);
-        FrameLayout mRl52 = this.findViewById(R.id.activiy_history_mood5_right);
-        FrameLayout mRl61 = this.findViewById(R.id.activity_history_mood6_left);
-        FrameLayout mRl62 = this.findViewById(R.id.activiy_history_mood6_right);
-        FrameLayout mRl71 = this.findViewById(R.id.activity_history_mood7_left);
-        FrameLayout mRl72 = this.findViewById(R.id.activiy_history_mood7_right);
+        FrameLayout mRl11 = this.findViewById(R.id.activiy_history_mood1_right);
+        FrameLayout mRl12 = this.findViewById(R.id.activityhistory_mood1_left);
+        FrameLayout mRl21 = this.findViewById(R.id.activiy_history_mood2_right);
+        FrameLayout mRl22 = this.findViewById(R.id.activity_history_mood2_left);
+        FrameLayout mRl31 = this.findViewById(R.id.activiy_history_mood3_right);
+        FrameLayout mRl32 = this.findViewById(R.id.activity_history_mood3_left);
+        FrameLayout mRl41 = this.findViewById(R.id.activiy_history_mood4_right);
+        FrameLayout mRl42 = this.findViewById(R.id.activity_history_mood4_left);
+        FrameLayout mRl51 = this.findViewById(R.id.activiy_history_mood5_right);
+        FrameLayout mRl52 = this.findViewById(R.id.activity_history_mood5_left);
+        FrameLayout mRl61 = this.findViewById(R.id.activiy_history_mood6_right);
+        FrameLayout mRl62 = this.findViewById(R.id.activity_history_mood6_left);
+        FrameLayout mRl71 = this.findViewById(R.id.activiy_history_mood7_right);
+        FrameLayout mRl72 = this.findViewById(R.id.activity_history_mood7_left);
 
         mPrefs = getSharedPreferences("Mypreferences", MODE_PRIVATE);
         Gson gson = new Gson();
@@ -154,29 +155,46 @@ public class History extends MainActivity {
             case 0:
                 mLeft.setBackgroundColor(Color.rgb(188, 233, 134));
                 mLayoutParamsLeft.width = 0;
-                mLayoutParamsLeft.weight = 75;
+                mLayoutParamsLeft.weight = 80;
                 mLeft.setLayoutParams(mLayoutParamsLeft);
+                mRight.setBackgroundColor(Color.rgb(230, 230, 230));
+                mLayoutParamsRight.width = 0;
+                mLayoutParamsRight.weight = 20;
+                mRight.setLayoutParams(mLayoutParamsRight);
                 break;
+
 
             case 1:
                 mLeft.setBackgroundColor(Color.rgb(70, 138, 217));
                 mLayoutParamsLeft.width = 0;
-                mLayoutParamsLeft.weight = 50;
+                mLayoutParamsLeft.weight = 60;
                 mLeft.setLayoutParams(mLayoutParamsLeft);
+                mRight.setBackgroundColor(Color.rgb(230, 230, 230));
+                mLayoutParamsRight.width = 0;
+                mLayoutParamsRight.weight = 40;
+                mRight.setLayoutParams(mLayoutParamsRight);
                 break;
 
             case 2:
                 mLeft.setBackgroundColor(Color.rgb(155, 155, 155));
                 mLayoutParamsLeft.width = 0;
-                mLayoutParamsLeft.weight = 25;
+                mLayoutParamsLeft.weight = 40;
                 mLeft.setLayoutParams(mLayoutParamsLeft);
+                mRight.setBackgroundColor(Color.rgb(230, 230, 230));
+                mLayoutParamsRight.width = 0;
+                mLayoutParamsRight.weight = 60;
+                mRight.setLayoutParams(mLayoutParamsRight);
                 break;
 
             case 3:
                 mLeft.setBackgroundColor(Color.rgb(222, 60, 80));
                 mLayoutParamsLeft.width = 0;
-                mLayoutParamsLeft.weight = 0;
+                mLayoutParamsLeft.weight = 20;
                 mLeft.setLayoutParams(mLayoutParamsLeft);
+                mRight.setBackgroundColor(Color.rgb(230, 230, 230));
+                mLayoutParamsRight.width = 0;
+                mLayoutParamsRight.weight = 80;
+                mRight.setLayoutParams(mLayoutParamsRight);
                 break;
 
             case 4:
@@ -184,118 +202,88 @@ public class History extends MainActivity {
                 mLayoutParamsLeft.width = 0;
                 mLayoutParamsLeft.weight = 100;
                 mLeft.setLayoutParams(mLayoutParamsLeft);
+                mRight.setBackgroundColor(Color.rgb(230, 230, 230));
+                mLayoutParamsRight.width = 0;
+                mLayoutParamsRight.weight = 0;
+                mRight.setLayoutParams(mLayoutParamsRight);
                 break;
                 default:
-        }
+        } }
 
-        switch (mMood.getPositionOfMood()) {
-            case 0:
-                mRight.setBackgroundColor(Color.rgb(188, 233, 134));
-                mLayoutParamsRight.width = 0;
-                mLayoutParamsRight.weight = 25;
-                mRight.setLayoutParams(mLayoutParamsLeft);
-                break;
-
-            case 1:
-                mRight.setBackgroundColor(Color.rgb(70, 138, 217));
-                mLayoutParamsRight.width = 0;
-                mLayoutParamsRight.weight = 50;
-                mRight.setLayoutParams(mLayoutParamsLeft);
-                break;
-
-            case 2:
-                mRight.setBackgroundColor(Color.rgb(155, 155, 155));
-                mLayoutParamsRight.width = 0;
-                mLayoutParamsRight.weight = 75;
-                mRight.setLayoutParams(mLayoutParamsLeft);
-                break;
-
-            case 3:
-                mRight.setBackgroundColor(Color.rgb(222, 60, 80));
-                mLayoutParamsRight.width = 0;
-                mLayoutParamsLeft.weight = 100;
-                mRight.setLayoutParams(mLayoutParamsLeft);
-                break;
-
-            case 4:
-                mRight.setBackgroundColor(Color.rgb(249, 236, 79));
-                mLayoutParamsRight.width = 0;
-                mLayoutParamsLeft.weight = 0;
-                mRight.setLayoutParams(mLayoutParamsLeft);
-                break;
-            default:
-
-                } }
-        if (mComment==null) {
+        if (   mMood.mComment==null) {
             mButtonComment1.setVisibility(INVISIBLE);
         } else {
             mButtonComment1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(History.this, (CharSequence) mComment, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(History.this, (CharSequence)    mMood.mComment, Toast.LENGTH_SHORT).show();
                 }
             });
         }
-        if (mComment==null) {
+        
+        if (mMood.mComment==null) {
             mButtonComment2.setVisibility(INVISIBLE);
         } else {
             mButtonComment2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(History.this, (CharSequence) mComment, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(History.this, (CharSequence) mMood.mComment, Toast.LENGTH_SHORT).show();
                 }
             });
         }
-        if (mComment==null) {
+        
+
+        if (mMood.mComment==null) {
             mButtonComment3.setVisibility(INVISIBLE);
         } else {
             mButtonComment3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(History.this, (CharSequence) mComment, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(History.this, (CharSequence) mMood.mComment, Toast.LENGTH_SHORT).show();
                 }
             });
         }
-        if (mComment==null) {
+        if (mMood.mComment==null) {
             mButtonComment4.setVisibility(INVISIBLE);
         } else {
             mButtonComment4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(History.this, (CharSequence) mComment, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(History.this, (CharSequence) mMood.mComment, Toast.LENGTH_SHORT).show();
                 }
             });
         }
-        if (mComment==null) {
+        if (mMood.mComment==null) {
             mButtonComment5.setVisibility(INVISIBLE);
         } else {
             mButtonComment5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(History.this, (CharSequence) mComment, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(History.this, (CharSequence) mMood.mComment, Toast.LENGTH_SHORT).show();
                 }
             });
         }
-        if (mComment==null) {
+        if (mMood.mComment==null) {
             mButtonComment6.setVisibility(INVISIBLE);
         } else {
             mButtonComment6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(History.this, (CharSequence) mComment, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(History.this, (CharSequence) mMood.mComment, Toast.LENGTH_SHORT).show();
                 }
             });
         }
-        if (mComment==null) {
+        if (mMood.mComment==null) {
             mButtonComment7.setVisibility(INVISIBLE);
         } else {
             mButtonComment7.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(History.this, (CharSequence) mComment, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(History.this, (CharSequence) mMood.mComment, Toast.LENGTH_SHORT).show();
                 }
             });
         }
+
     } }
 
 
