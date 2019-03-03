@@ -22,9 +22,10 @@
                 android:id="@+id/buttonComment1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:contentDescription="TODO"
                 android:src="@drawable/ic_comment_black_48px"
-                android:text="Button"
-                android:contentDescription="TODO" />
+                android:text="Button" />
         </FrameLayout>
 
         <FrameLayout
@@ -51,6 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button"
+                android:layout_gravity="center_vertical|end"
                 android:src="@drawable/ic_comment_black_48px"
                 android:contentDescription="TODO" />
         </FrameLayout>
@@ -78,6 +80,7 @@
                 android:id="@+id/buttonComment3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
                 android:text="Button"
                 android:src="@drawable/ic_comment_black_48px"
                 android:contentDescription="TODO" />
@@ -107,6 +110,7 @@
         <ImageButton
             android:id="@+id/buttonComment4"
             android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical|end"
             android:layout_height="wrap_content"
             android:text="Button"
             android:src="@drawable/ic_comment_black_48px"
@@ -137,6 +141,7 @@
             android:id="@+id/buttonComment5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
             android:text="Button"
             android:src="@drawable/ic_comment_black_48px"
             android:contentDescription="TODO" />
@@ -165,6 +170,7 @@
                 android:id="@+id/buttonComment6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
                 android:text="Button"
                 android:src="@drawable/ic_comment_black_48px"
                 android:contentDescription="TODO" />
@@ -193,6 +199,7 @@
                 android:id="@+id/buttonComment7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
                 android:text="Button"
                 android:src="@drawable/ic_comment_black_48px"
                 android:contentDescription="TODO" />
