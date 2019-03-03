@@ -37,7 +37,13 @@ public class MainActivity extends AppCompatActivity {
     private Mood mColors;
     private Mood mImages;
 
-
+    final Mood[] lst_smileys = {
+            new Mood(R.drawable.smiley_sad, Color.rgb(222 , 60, 80), "", 0),
+            new Mood(R.drawable.smiley_disappointed, Color.rgb(155, 155, 155), "", 1),
+            new Mood(R.drawable.smiley_normal, Color.rgb(70,138 , 217), "", 2),
+            new Mood(R.drawable.smiley_happy, Color.rgb(188,233,134), "", 3),
+            new Mood(R.drawable.smiley_super_happy, Color.rgb(249, 236, 79), "", 4)
+    };
     @Override
  public void onCreate(Bundle savedInstanceState) {
 
@@ -45,23 +51,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mPrefs = getSharedPreferences("Mypreferences", MODE_PRIVATE);
         mViewPager = findViewById(R.id.viewpager);
-        myadapter = new SlideAdapter(this);
+        myadapter = new SlideAdapter(this, lst_smileys);
         mViewPager.setAdapter(myadapter);
+        mViewPager.setCurrentItem(3);
         Gson gson = new Gson();
-        String json = mPrefs.getString("" + (mCal.get(Calendar.DAY_OF_YEAR)) + 11 , "");
+        String json = mPrefs.getString("" + (mCal.get(Calendar.DAY_OF_YEAR)) , "");
         mMood = gson.fromJson(json, Mood.class);
         if (mMood == null) {
             mMood = new Mood(R.drawable.smiley_happy,R.color.light_sage,"",0);
         }
 
         // initialized Mood + Color + Comment + Position
-        final Mood[] lst_smileys = {
-                new Mood(R.drawable.smiley_happy, Color.rgb(188, 233, 134), "", 0),
-                new Mood(R.drawable.smiley_normal, Color.rgb(70, 138, 217), "", 1),
-                new Mood(R.drawable.smiley_disappointed, Color.rgb(155, 155, 155), "", 2),
-                new Mood(R.drawable.smiley_sad, Color.rgb(222, 60, 80), "", 3),
-                new Mood(R.drawable.smiley_super_happy, Color.rgb(249, 236, 79), "", 4)
-        };
+
 
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences.Editor prefsEditor = mPrefs.edit();
                 Gson gson = new Gson();
                 String json = gson.toJson(mMood);
-                prefsEditor.putString(("" + mCal.get(Calendar.DAY_OF_YEAR) +10), json);
+                prefsEditor.putString(("" + (mCal.get(Calendar.DAY_OF_YEAR) - 3)), json);
                 prefsEditor.apply();
 
                 MediaPlayer mediaPlayer;
@@ -138,12 +139,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
 
                 String mTxt = mComment.getText().toString();
-                Toast.makeText(getApplicationContext(),mTxt, Toast.LENGTH_LONG).show();
+                if (!mTxt.isEmpty()) Toast.makeText(getApplicationContext(),mTxt, Toast.LENGTH_LONG).show();
                 mMood.mComment = mTxt;
                 SharedPreferences.Editor prefsEditor = mPrefs.edit();
                 Gson gson = new Gson();
                 String json = gson.toJson(mMood);
-                prefsEditor.putString("" + (mCal.get(Calendar.DAY_OF_YEAR)) + 11, json);
+                prefsEditor.putString("" + (mCal.get(Calendar.DAY_OF_YEAR) - 3), json);
                 prefsEditor.apply();
             }
         });

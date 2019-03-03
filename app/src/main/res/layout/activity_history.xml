@@ -18,8 +18,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent">
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/buttonComment1"
+                android:padding="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|end"
@@ -47,8 +48,9 @@
             android:layout_weight="20"
             android:layout_width="0dp"
             android:layout_height="match_parent">
-            <ImageButton
+            <ImageView
                 android:id="@+id/buttonComment2"
+                android:padding="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button"
@@ -76,8 +78,9 @@
             android:layout_weight="20"
             android:layout_width="0dp"
             android:layout_height="match_parent">
-            <ImageButton
+            <ImageView
                 android:id="@+id/buttonComment3"
+                android:padding="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|end"
@@ -107,8 +110,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent">
 
-        <ImageButton
+        <ImageView
             android:id="@+id/buttonComment4"
+            android:padding="16dp"
             android:layout_width="wrap_content"
             android:layout_gravity="center_vertical|end"
             android:layout_height="wrap_content"
@@ -137,8 +141,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent">
 
-        <ImageButton
+        <ImageView
             android:id="@+id/buttonComment5"
+            android:padding="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|end"
@@ -166,8 +171,9 @@
             android:layout_weight="20"
             android:layout_width="0dp"
             android:layout_height="match_parent">
-            <ImageButton
+            <ImageView
                 android:id="@+id/buttonComment6"
+                android:padding="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|end"
@@ -195,8 +201,9 @@
             android:layout_weight="20"
             android:layout_width="0dp"
             android:layout_height="match_parent">
-            <ImageButton
+            <ImageView
                 android:id="@+id/buttonComment7"
+                android:padding="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|end"

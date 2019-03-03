@@ -1,7 +1,6 @@
 package com.m.sofiane.moodtracker2.Adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
@@ -21,21 +20,14 @@ public class SlideAdapter extends PagerAdapter {
     private Context mContext;
     private LayoutInflater mInflater;
 
-    public Mood[] getMood() {
-        return lst_smileys;
-    }
-
-    public Mood[] lst_smileys = {
-            new Mood(R.drawable.smiley_happy, Color.rgb(188,233,134), "", 0),
-            new Mood(R.drawable.smiley_normal, Color.rgb(70,138 , 217), "", 1),
-            new Mood(R.drawable.smiley_disappointed, Color.rgb(155, 155, 155), "", 2),
-            new Mood(R.drawable.smiley_sad, Color.rgb(222 , 60, 80), "", 3),
-            new Mood(R.drawable.smiley_super_happy, Color.rgb(249, 236, 79), "", 4)
-};
+    public Mood[] lst_smileys;
 
 
-    public SlideAdapter(Context context) {
+
+    public SlideAdapter(Context context , Mood [] moodlst) {
         this.mContext = context;
+        this.lst_smileys = moodlst;
+
     }
 
     @Override
