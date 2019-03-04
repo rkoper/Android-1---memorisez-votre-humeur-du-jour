@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences.Editor prefsEditor = mPrefs.edit();
                 Gson gson = new Gson();
                 String json = gson.toJson(mMood);
-                prefsEditor.putString(("" + (mCal.get(Calendar.DAY_OF_YEAR) - 3)), json);
+                prefsEditor.putString(("" + (mCal.get(Calendar.DAY_OF_YEAR))), json);
                 prefsEditor.apply();
 
                 MediaPlayer mediaPlayer;
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences.Editor prefsEditor = mPrefs.edit();
                 Gson gson = new Gson();
                 String json = gson.toJson(mMood);
-                prefsEditor.putString("" + (mCal.get(Calendar.DAY_OF_YEAR) - 3), json);
+                prefsEditor.putString("" + (mCal.get(Calendar.DAY_OF_YEAR)), json);
                 prefsEditor.apply();
             }
         });

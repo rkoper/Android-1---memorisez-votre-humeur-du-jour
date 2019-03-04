@@ -12,7 +12,7 @@
         android:orientation="horizontal">
 
         <FrameLayout
-            android:id="@+id/activityhistory_mood1_left"
+            android:id="@+id/activity_history_mood1_left"
             android:background="#00ff00"
             android:layout_weight="20"
             android:layout_width="0dp"
@@ -27,10 +27,16 @@
                 android:contentDescription="TODO"
                 android:src="@drawable/ic_comment_black_48px"
                 android:text="Button" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Il y une semaine" />
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/activiy_history_mood1_right"
+            android:id="@+id/activity_history_mood1_right"
             android:layout_weight="80"
             android:layout_width="0dp"
             android:layout_height="match_parent">
@@ -57,6 +63,12 @@
                 android:layout_gravity="center_vertical|end"
                 android:src="@drawable/ic_comment_black_48px"
                 android:contentDescription="TODO" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Il y a six jours" />
         </FrameLayout>
 
         <FrameLayout
@@ -87,6 +99,12 @@
                 android:text="Button"
                 android:src="@drawable/ic_comment_black_48px"
                 android:contentDescription="TODO" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Il y a cinq jours" />
 
         </FrameLayout>
 
@@ -119,6 +137,12 @@
             android:text="Button"
             android:src="@drawable/ic_comment_black_48px"
             android:contentDescription="TODO" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I y a quatre jours" />
         </FrameLayout>
 
         <FrameLayout
@@ -150,6 +174,13 @@
             android:text="Button"
             android:src="@drawable/ic_comment_black_48px"
             android:contentDescription="TODO" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Il y trois jours"
+                android:paddingStart="5dp"/>
         </FrameLayout>
 
         <FrameLayout
@@ -180,6 +211,12 @@
                 android:text="Button"
                 android:src="@drawable/ic_comment_black_48px"
                 android:contentDescription="TODO" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Avant hier" />
         </FrameLayout>
 
         <FrameLayout
@@ -210,6 +247,12 @@
                 android:text="Button"
                 android:src="@drawable/ic_comment_black_48px"
                 android:contentDescription="TODO" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hier" />
         </FrameLayout>
 
         <FrameLayout

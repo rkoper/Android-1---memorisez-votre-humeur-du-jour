@@ -62,20 +62,20 @@ public class History extends MainActivity {
         mButtonComment7 = findViewById(R.id.buttonComment7);
 
 
-        FrameLayout mRl11 = this.findViewById(R.id.activiy_history_mood1_right);
-        FrameLayout mRl12 = this.findViewById(R.id.activityhistory_mood1_left);
-        FrameLayout mRl21 = this.findViewById(R.id.activiy_history_mood2_right);
-        FrameLayout mRl22 = this.findViewById(R.id.activity_history_mood2_left);
-        FrameLayout mRl31 = this.findViewById(R.id.activiy_history_mood3_right);
-        FrameLayout mRl32 = this.findViewById(R.id.activity_history_mood3_left);
+        FrameLayout mRl11 = this.findViewById(R.id.activiy_history_mood7_right);
+        FrameLayout mRl12 = this.findViewById(R.id.activity_history_mood7_left);
+        FrameLayout mRl21 = this.findViewById(R.id.activiy_history_mood6_right);
+        FrameLayout mRl22 = this.findViewById(R.id.activity_history_mood6_left);
+        FrameLayout mRl31 = this.findViewById(R.id.activiy_history_mood5_right);
+        FrameLayout mRl32 = this.findViewById(R.id.activity_history_mood5_left);
         FrameLayout mRl41 = this.findViewById(R.id.activiy_history_mood4_right);
         FrameLayout mRl42 = this.findViewById(R.id.activity_history_mood4_left);
-        FrameLayout mRl51 = this.findViewById(R.id.activiy_history_mood5_right);
-        FrameLayout mRl52 = this.findViewById(R.id.activity_history_mood5_left);
-        FrameLayout mRl61 = this.findViewById(R.id.activiy_history_mood6_right);
-        FrameLayout mRl62 = this.findViewById(R.id.activity_history_mood6_left);
-        FrameLayout mRl71 = this.findViewById(R.id.activiy_history_mood7_right);
-        FrameLayout mRl72 = this.findViewById(R.id.activity_history_mood7_left);
+        FrameLayout mRl51 = this.findViewById(R.id.activiy_history_mood3_right);
+        FrameLayout mRl52 = this.findViewById(R.id.activity_history_mood3_left);
+        FrameLayout mRl61 = this.findViewById(R.id.activiy_history_mood2_right);
+        FrameLayout mRl62 = this.findViewById(R.id.activity_history_mood2_left);
+        FrameLayout mRl71 = this.findViewById(R.id.activity_history_mood1_right);
+        FrameLayout mRl72 = this.findViewById(R.id.activity_history_mood1_left);
 
         mPrefs = getSharedPreferences("Mypreferences", MODE_PRIVATE);
         Gson gson = new Gson();
