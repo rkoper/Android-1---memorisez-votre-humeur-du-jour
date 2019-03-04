@@ -23,8 +23,7 @@ public class SlideAdapter extends PagerAdapter {
     public Mood[] lst_smileys;
 
 
-
-    public SlideAdapter(Context context , Mood [] moodlst) {
+    public SlideAdapter(Context context, Mood[] moodlst) {
         this.mContext = context;
         this.lst_smileys = moodlst;
 
@@ -37,15 +36,16 @@ public class SlideAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return (view== object);
+        return (view == object);
 
     }
+
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
-        mInflater =(LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View view = mInflater.inflate(R.layout.slide,container,false);
+        mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = mInflater.inflate(R.layout.slide, container, false);
         LinearLayout layoutside = view.findViewById(R.id.slidelinearlayout);
-        ImageView imgslide  = view.findViewById(R.id.slideimg);
+        ImageView imgslide = view.findViewById(R.id.slideimg);
 
 
         layoutside.setBackgroundColor(lst_smileys[position].getColors());
@@ -59,7 +59,7 @@ public class SlideAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        container.removeView((LinearLayout)object);
+        container.removeView((LinearLayout) object);
 
 
     }

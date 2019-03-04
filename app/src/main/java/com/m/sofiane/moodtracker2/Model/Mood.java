@@ -3,23 +3,21 @@ package com.m.sofiane.moodtracker2.Model;
 /**
  * created by Sofiane M. 07/02/2019
  */
-public class Mood  {
+public class Mood {
     public int mImages;
     public int mColors;
     public String mComment;
     public int mPositionOfMood;
 
 
-
-  public Mood (int images, int colors, String comment, int positionOfMood) {
+    public Mood(int images, int colors, String comment, int positionOfMood) {
         mImages = images;
         mColors = colors;
         mComment = comment;
         mPositionOfMood = positionOfMood;
 
 
-  }
-
+    }
 
 
     public int getImages() {
@@ -34,11 +32,9 @@ public class Mood  {
         return mComment;
     }
 
-    public int getPositionOfMood() { return mPositionOfMood;}
-
-
-
-
+    public int getPositionOfMood() {
+        return mPositionOfMood;
+    }
 
 
 }

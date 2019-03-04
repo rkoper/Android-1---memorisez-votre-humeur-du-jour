@@ -22,7 +22,6 @@ import com.m.sofiane.moodtracker2.R;
 import java.util.Calendar;
 
 
-
 public class MainActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
@@ -38,14 +37,15 @@ public class MainActivity extends AppCompatActivity {
     private Mood mImages;
 
     final Mood[] lst_smileys = {
-            new Mood(R.drawable.smiley_sad, Color.rgb(222 , 60, 80), "", 0),
+            new Mood(R.drawable.smiley_sad, Color.rgb(222, 60, 80), "", 0),
             new Mood(R.drawable.smiley_disappointed, Color.rgb(155, 155, 155), "", 1),
-            new Mood(R.drawable.smiley_normal, Color.rgb(70,138 , 217), "", 2),
-            new Mood(R.drawable.smiley_happy, Color.rgb(188,233,134), "", 3),
+            new Mood(R.drawable.smiley_normal, Color.rgb(70, 138, 217), "", 2),
+            new Mood(R.drawable.smiley_happy, Color.rgb(188, 233, 134), "", 3),
             new Mood(R.drawable.smiley_super_happy, Color.rgb(249, 236, 79), "", 4)
     };
+
     @Override
- public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -55,21 +55,20 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setAdapter(myadapter);
         mViewPager.setCurrentItem(3);
         Gson gson = new Gson();
-        String json = mPrefs.getString("" + (mCal.get(Calendar.DAY_OF_YEAR)) , "");
+        String json = mPrefs.getString("" + (mCal.get(Calendar.DAY_OF_YEAR)), "");
         mMood = gson.fromJson(json, Mood.class);
         if (mMood == null) {
-            mMood = new Mood(R.drawable.smiley_happy,R.color.light_sage,"",0);
+            mMood = new Mood(R.drawable.smiley_happy, R.color.light_sage, "", 0);
         }
 
         // initialized Mood + Color + Comment + Position
-
 
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
             public void onPageScrolled(int positionFixe, float v, int i1) {
-                                    }
+            }
 
             // Recover Position of Smiley
             @Override
@@ -77,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Calendar mCal = Calendar.getInstance();
 
-                mMood.mPositionOfMood=lst_smileys[positionOfMood].getPositionOfMood();
-                mMood.mColors= lst_smileys[positionOfMood].getColors();
+                mMood.mPositionOfMood = lst_smileys[positionOfMood].getPositionOfMood();
+                mMood.mColors = lst_smileys[positionOfMood].getColors();
                 mMood.mImages = lst_smileys[positionOfMood].getImages();
 
                 SharedPreferences.Editor prefsEditor = mPrefs.edit();
@@ -90,42 +89,44 @@ public class MainActivity extends AppCompatActivity {
                 MediaPlayer mediaPlayer;
 
                 switch (mMood.getPositionOfMood()) {
-                case 0:
-                mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sound1);
-                mediaPlayer.start();
-                break;
+                    case 0:
+                        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sound1);
+                        mediaPlayer.start();
+                        break;
 
-                case 1:
-                mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sound2);
-                mediaPlayer.start();
-                break;
+                    case 1:
+                        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sound2);
+                        mediaPlayer.start();
+                        break;
 
-                case 2:
-                mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sound3);
-                mediaPlayer.start();
-                break;
+                    case 2:
+                        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sound3);
+                        mediaPlayer.start();
+                        break;
 
-                case 3:
-                mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sound4);
-                mediaPlayer.start();
-                break;
+                    case 3:
+                        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sound4);
+                        mediaPlayer.start();
+                        break;
 
-                case 4: mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sound5);
-                mediaPlayer.start();
-                break;
-                default:
-            } }
+                    case 4:
+                        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sound5);
+                        mediaPlayer.start();
+                        break;
+                    default:
+                }
+            }
 
             @Override
             public void onPageScrollStateChanged(int i) {
             }
         });
 
-        mButton1 =  findViewById(R.id.Button1);
+        mButton1 = findViewById(R.id.Button1);
 
 // Call PopUP
 
-        AlertDialog.Builder builder= new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.your_mood);
         builder.setMessage(R.string.you_mood_today);
 
@@ -139,7 +140,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
 
                 String mTxt = mComment.getText().toString();
-                if (!mTxt.isEmpty()) Toast.makeText(getApplicationContext(),mTxt, Toast.LENGTH_LONG).show();
+                if (!mTxt.isEmpty())
+                    Toast.makeText(getApplicationContext(), mTxt, Toast.LENGTH_LONG).show();
                 mMood.mComment = mTxt;
                 SharedPreferences.Editor prefsEditor = mPrefs.edit();
                 Gson gson = new Gson();
@@ -156,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final AlertDialog ad= builder.create();
+        final AlertDialog ad = builder.create();
         // initalized Two button
 
         mButton1 = findViewById(R.id.Button1);
@@ -168,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mButton2 =  findViewById(R.id.Button2);
+        mButton2 = findViewById(R.id.Button2);
 
         // Lauch history
 

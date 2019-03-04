@@ -119,7 +119,7 @@ public class History extends MainActivity {
         if (mMood5 == null) {
             mRl61.setVisibility(INVISIBLE);
             mRl62.setVisibility(INVISIBLE);
-         }
+        }
 
         json = mPrefs.getString("" + (mCal.get(Calendar.DAY_OF_YEAR) - 7), "");
         mMood6 = gson.fromJson(json, Mood.class);
@@ -128,87 +128,88 @@ public class History extends MainActivity {
             mRl72.setVisibility(INVISIBLE);
         }
 
-        ChangeOfLayout(mRl11,mRl12,mButtonComment1,mMood);
-        ChangeOfLayout(mRl21,mRl22,mButtonComment2,mMood1);
-        ChangeOfLayout(mRl31,mRl32,mButtonComment3,mMood2);
-        ChangeOfLayout(mRl41,mRl42,mButtonComment4,mMood3);
-        ChangeOfLayout(mRl51,mRl52,mButtonComment5,mMood4);
-        ChangeOfLayout(mRl61,mRl62,mButtonComment6,mMood5);
-        ChangeOfLayout(mRl71,mRl72,mButtonComment7,mMood6);
+        ChangeOfLayout(mRl11, mRl12, mButtonComment1, mMood);
+        ChangeOfLayout(mRl21, mRl22, mButtonComment2, mMood1);
+        ChangeOfLayout(mRl31, mRl32, mButtonComment3, mMood2);
+        ChangeOfLayout(mRl41, mRl42, mButtonComment4, mMood3);
+        ChangeOfLayout(mRl51, mRl52, mButtonComment5, mMood4);
+        ChangeOfLayout(mRl61, mRl62, mButtonComment6, mMood5);
+        ChangeOfLayout(mRl71, mRl72, mButtonComment7, mMood6);
     }
 
-    public void ChangeOfLayout(FrameLayout mRight, FrameLayout mLeft, ImageView comment, final Mood mood)  {
+    public void ChangeOfLayout(FrameLayout mRight, FrameLayout mLeft, ImageView comment, final Mood mood) {
 
         LinearLayout.LayoutParams mLayoutParamsRight = (LinearLayout.LayoutParams) mRight.getLayoutParams();
         LinearLayout.LayoutParams mLayoutParamsLeft = (LinearLayout.LayoutParams) mLeft.getLayoutParams();
 
-        if (mood==null) {
+        if (mood == null) {
             mLeft.setVisibility(INVISIBLE);
             mRight.setVisibility(INVISIBLE);
         }
         // Size of Layout
         else {
-        switch (mood.getPositionOfMood()) {
+            switch (mood.getPositionOfMood()) {
 
-            case 0:
-                mLeft.setBackgroundColor(Color.rgb(222, 60, 80));
-                mLayoutParamsLeft.width = 0;
-                mLayoutParamsLeft.weight = 20;
-                mLeft.setLayoutParams(mLayoutParamsLeft);
-                mRight.setBackgroundColor(Color.rgb(230, 230, 230));
-                mLayoutParamsRight.width = 0;
-                mLayoutParamsRight.weight = 80;
-                mRight.setLayoutParams(mLayoutParamsRight);
-                break;
+                case 0:
+                    mLeft.setBackgroundColor(Color.rgb(222, 60, 80));
+                    mLayoutParamsLeft.width = 0;
+                    mLayoutParamsLeft.weight = 20;
+                    mLeft.setLayoutParams(mLayoutParamsLeft);
+                    mRight.setBackgroundColor(Color.rgb(230, 230, 230));
+                    mLayoutParamsRight.width = 0;
+                    mLayoutParamsRight.weight = 80;
+                    mRight.setLayoutParams(mLayoutParamsRight);
+                    break;
 
 
-            case 1:
-                mLeft.setBackgroundColor(Color.rgb(155, 155, 155));
-                mLayoutParamsLeft.width = 0;
-                mLayoutParamsLeft.weight = 40;
-                mLeft.setLayoutParams(mLayoutParamsLeft);
-                mRight.setBackgroundColor(Color.rgb(230, 230, 230));
-                mLayoutParamsRight.width = 0;
-                mLayoutParamsRight.weight = 60;
-                mRight.setLayoutParams(mLayoutParamsRight);
-                break;
+                case 1:
+                    mLeft.setBackgroundColor(Color.rgb(155, 155, 155));
+                    mLayoutParamsLeft.width = 0;
+                    mLayoutParamsLeft.weight = 40;
+                    mLeft.setLayoutParams(mLayoutParamsLeft);
+                    mRight.setBackgroundColor(Color.rgb(230, 230, 230));
+                    mLayoutParamsRight.width = 0;
+                    mLayoutParamsRight.weight = 60;
+                    mRight.setLayoutParams(mLayoutParamsRight);
+                    break;
 
-            case 2:
-                mLeft.setBackgroundColor(Color.rgb(70, 138, 217));
-                mLayoutParamsLeft.width = 0;
-                mLayoutParamsLeft.weight = 60;
-                mLeft.setLayoutParams(mLayoutParamsLeft);
-                mRight.setBackgroundColor(Color.rgb(230, 230, 230));
-                mLayoutParamsRight.width = 0;
-                mLayoutParamsRight.weight = 40;
-                mRight.setLayoutParams(mLayoutParamsRight);
+                case 2:
+                    mLeft.setBackgroundColor(Color.rgb(70, 138, 217));
+                    mLayoutParamsLeft.width = 0;
+                    mLayoutParamsLeft.weight = 60;
+                    mLeft.setLayoutParams(mLayoutParamsLeft);
+                    mRight.setBackgroundColor(Color.rgb(230, 230, 230));
+                    mLayoutParamsRight.width = 0;
+                    mLayoutParamsRight.weight = 40;
+                    mRight.setLayoutParams(mLayoutParamsRight);
 
-                break;
+                    break;
 
-            case 3:
-                mLeft.setBackgroundColor(Color.rgb(188, 233, 134));
-                mLayoutParamsLeft.width = 0;
-                mLayoutParamsLeft.weight = 80;
-                mLeft.setLayoutParams(mLayoutParamsLeft);
-                mRight.setBackgroundColor(Color.rgb(230, 230, 230));
-                mLayoutParamsRight.width = 0;
-                mLayoutParamsRight.weight = 20;
-                mRight.setLayoutParams(mLayoutParamsRight);
+                case 3:
+                    mLeft.setBackgroundColor(Color.rgb(188, 233, 134));
+                    mLayoutParamsLeft.width = 0;
+                    mLayoutParamsLeft.weight = 80;
+                    mLeft.setLayoutParams(mLayoutParamsLeft);
+                    mRight.setBackgroundColor(Color.rgb(230, 230, 230));
+                    mLayoutParamsRight.width = 0;
+                    mLayoutParamsRight.weight = 20;
+                    mRight.setLayoutParams(mLayoutParamsRight);
 
-                break;
+                    break;
 
-            case 4:
-                mLeft.setBackgroundColor(Color.rgb(249, 236, 79));
-                mLayoutParamsLeft.width = 0;
-                mLayoutParamsLeft.weight = 100;
-                mLeft.setLayoutParams(mLayoutParamsLeft);
-                mRight.setBackgroundColor(Color.rgb(230, 230, 230));
-                mLayoutParamsRight.width = 0;
-                mLayoutParamsRight.weight = 0;
-                mRight.setLayoutParams(mLayoutParamsRight);
-                break;
+                case 4:
+                    mLeft.setBackgroundColor(Color.rgb(249, 236, 79));
+                    mLayoutParamsLeft.width = 0;
+                    mLayoutParamsLeft.weight = 100;
+                    mLeft.setLayoutParams(mLayoutParamsLeft);
+                    mRight.setBackgroundColor(Color.rgb(230, 230, 230));
+                    mLayoutParamsRight.width = 0;
+                    mLayoutParamsRight.weight = 0;
+                    mRight.setLayoutParams(mLayoutParamsRight);
+                    break;
                 default:
-        } }
+            }
+        }
 
         if (mood == null || mood.mComment.isEmpty()) {
             comment.setVisibility(View.INVISIBLE);
@@ -217,15 +218,15 @@ public class History extends MainActivity {
             comment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(History.this, (CharSequence)    mood.mComment, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(History.this, (CharSequence) mood.mComment, Toast.LENGTH_SHORT).show();
                 }
             });
         }
 
-        }
+    }
 
 
-      }
+}
 
 
 
