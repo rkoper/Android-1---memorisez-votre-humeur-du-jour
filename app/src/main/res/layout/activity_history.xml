@@ -32,7 +32,8 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Il y une semaine" />
+                android:text="Il y a une semaine"
+                android:layout_marginStart="10dp"/>
         </FrameLayout>
 
         <FrameLayout
@@ -68,7 +69,8 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Il y a six jours" />
+                android:text="Il y a six jours"
+                android:layout_marginStart="10dp"/>
         </FrameLayout>
 
         <FrameLayout
@@ -104,7 +106,8 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Il y a cinq jours" />
+                android:text="Il y a cinq jours"
+                android:layout_marginStart="10dp"/>
 
         </FrameLayout>
 
@@ -142,7 +145,8 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="I y a quatre jours" />
+                android:text="Il y a quatre jours"
+                android:layout_marginStart="10dp"/>
         </FrameLayout>
 
         <FrameLayout
@@ -179,8 +183,8 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Il y trois jours"
-                android:paddingStart="5dp"/>
+                android:text="Il y a trois jours"
+                android:layout_marginStart="10dp"/>
         </FrameLayout>
 
         <FrameLayout
@@ -216,7 +220,8 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Avant hier" />
+                android:layout_marginStart="10dp"
+                android:text="Avant-hier" />
         </FrameLayout>
 
         <FrameLayout
@@ -252,6 +257,7 @@
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:text="Hier" />
         </FrameLayout>
 
