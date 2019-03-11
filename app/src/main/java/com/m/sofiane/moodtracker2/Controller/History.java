@@ -128,13 +128,13 @@ public class History extends MainActivity {
             mRl72.setVisibility(INVISIBLE);
         }
 
-        ChangeOfLayout(mRl11, mRl12, mButtonComment1, mMood);
-        ChangeOfLayout(mRl21, mRl22, mButtonComment2, mMood1);
-        ChangeOfLayout(mRl31, mRl32, mButtonComment3, mMood2);
+        ChangeOfLayout(mRl11, mRl12, mButtonComment7, mMood);
+        ChangeOfLayout(mRl21, mRl22, mButtonComment6, mMood1);
+        ChangeOfLayout(mRl31, mRl32, mButtonComment5, mMood2);
         ChangeOfLayout(mRl41, mRl42, mButtonComment4, mMood3);
-        ChangeOfLayout(mRl51, mRl52, mButtonComment5, mMood4);
-        ChangeOfLayout(mRl61, mRl62, mButtonComment6, mMood5);
-        ChangeOfLayout(mRl71, mRl72, mButtonComment7, mMood6);
+        ChangeOfLayout(mRl51, mRl52, mButtonComment3, mMood4);
+        ChangeOfLayout(mRl61, mRl62, mButtonComment2, mMood5);
+        ChangeOfLayout(mRl71, mRl72, mButtonComment1, mMood6);
     }
 
     public void ChangeOfLayout(FrameLayout mRight, FrameLayout mLeft, ImageView comment, final Mood mood) {
@@ -209,7 +209,6 @@ public class History extends MainActivity {
                     break;
                 default:
             }
-        }
 
         if (mood == null || mood.mComment.isEmpty()) {
             comment.setVisibility(View.INVISIBLE);
@@ -226,7 +225,7 @@ public class History extends MainActivity {
     }
 
 
-}
+} }
 
 
 
