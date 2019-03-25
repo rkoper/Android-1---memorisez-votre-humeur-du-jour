@@ -19,7 +19,9 @@ import com.m.sofiane.moodtracker2.Adapter.SlideAdapter;
 import com.m.sofiane.moodtracker2.Model.Mood;
 import com.m.sofiane.moodtracker2.R;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -54,8 +56,44 @@ public class MainActivity extends AppCompatActivity {
         myadapter = new SlideAdapter(this, lst_smileys);
         mViewPager.setAdapter(myadapter);
         mViewPager.setCurrentItem(3);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date()); //
+        c.add(Calendar.DATE, 0);
+
+        final String output0 = sdf.format(c.getTime());
+        System.out.println(output0);
+        c.add(Calendar.DATE, -1);
+        final String output1 = sdf.format(c.getTime());
+        System.out.println(output1);
+
+        c.add(Calendar.DATE, -1);
+        final String output2 = sdf.format(c.getTime());
+        System.out.println(output2);
+
+        c.add(Calendar.DATE, -1);
+        final String output3 = sdf.format(c.getTime());
+        System.out.println(output3);
+
+        c.add(Calendar.DATE, -1);
+        final String output4 = sdf.format(c.getTime());
+        System.out.println(output4);
+
+        c.add(Calendar.DATE, -1);
+        final String output5 = sdf.format(c.getTime());
+        System.out.println(output5);
+
+        c.add(Calendar.DATE, -1);
+        final String output6 = sdf.format(c.getTime());
+        System.out.println(output6);
+
+        c.add(Calendar.DATE, -1);
+        final String output7 = sdf.format(c.getTime());
+        System.out.println(output7);
+
         Gson gson = new Gson();
-        String json = mPrefs.getString("" + (mCal.get(Calendar.DAY_OF_YEAR)), "");
+        String json = mPrefs.getString("" + (output3), "");
         mMood = gson.fromJson(json, Mood.class);
         if (mMood == null) {
             mMood = new Mood(R.drawable.smiley_happy, R.color.light_sage, "", 0);
@@ -83,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences.Editor prefsEditor = mPrefs.edit();
                 Gson gson = new Gson();
                 String json = gson.toJson(mMood);
-                prefsEditor.putString(("" + (mCal.get(Calendar.DAY_OF_YEAR)-6)), json);
+                prefsEditor.putString(("" + (output3)), json);
                 prefsEditor.apply();
 
                 MediaPlayer mediaPlayer;
@@ -144,9 +182,12 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), mTxt, Toast.LENGTH_LONG).show();
                 mMood.mComment = mTxt;
                 SharedPreferences.Editor prefsEditor = mPrefs.edit();
+
+
+
                 Gson gson = new Gson();
                 String json = gson.toJson(mMood);
-                prefsEditor.putString("" + (mCal.get(Calendar.DAY_OF_YEAR)-6), json);
+                prefsEditor.putString("" + (output3), json);
                 prefsEditor.apply();
             }
         });

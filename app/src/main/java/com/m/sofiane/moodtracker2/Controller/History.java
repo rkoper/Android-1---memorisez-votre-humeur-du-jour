@@ -14,7 +14,9 @@ import com.google.gson.Gson;
 import com.m.sofiane.moodtracker2.Model.Mood;
 import com.m.sofiane.moodtracker2.R;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import static android.view.View.INVISIBLE;
 import static java.util.Calendar.getInstance;
@@ -51,6 +53,8 @@ public class History extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
+
+
         // Initialized Layout of mood
 
         mButtonComment1 = findViewById(R.id.buttonComment1);
@@ -77,51 +81,88 @@ public class History extends MainActivity {
         FrameLayout mRl71 = this.findViewById(R.id.activity_history_mood1_right);
         FrameLayout mRl72 = this.findViewById(R.id.activity_history_mood1_left);
 
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date()); //
+        c.add(Calendar.DATE, 0);
+        final String output0 = sdf.format(c.getTime());
+        System.out.println(output0);
+
+        c.add(Calendar.DATE, -1);
+        final String output1 = sdf.format(c.getTime());
+        System.out.println(output1);
+
+        c.add(Calendar.DATE, -1);
+        final String output2 = sdf.format(c.getTime());
+        System.out.println(output2);
+
+        c.add(Calendar.DATE, -1);
+        final String output3 = sdf.format(c.getTime());
+        System.out.println(output3);
+
+        c.add(Calendar.DATE, -1);
+        final String output4 = sdf.format(c.getTime());
+        System.out.println(output4);
+
+        c.add(Calendar.DATE, -1);
+        final String output5 = sdf.format(c.getTime());
+        System.out.println(output5);
+
+        c.add(Calendar.DATE, -1);
+        final String output6 = sdf.format(c.getTime());
+        System.out.println(output6);
+
+        c.add(Calendar.DATE, -1);
+        final String output7 = sdf.format(c.getTime());
+        System.out.println(output7);
+
+
         mPrefs = getSharedPreferences("Mypreferences", MODE_PRIVATE);
         Gson gson = new Gson();
-        String json = mPrefs.getString("" + (mCal.get(Calendar.DAY_OF_YEAR) - 1), "");
+        String json = mPrefs.getString("" + (output1), "");
         mMood = gson.fromJson(json, Mood.class);
         if (mMood == null) {
             mRl11.setVisibility(INVISIBLE);
             mRl12.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + (mCal.get(Calendar.DAY_OF_YEAR) - 2), "");
+
+        json = mPrefs.getString("" + (output2), "");
         mMood1 = gson.fromJson(json, Mood.class);
         if (mMood1 == null) {
             mRl21.setVisibility(INVISIBLE);
             mRl22.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + (mCal.get(Calendar.DAY_OF_YEAR) - 3), "");
+        json = mPrefs.getString("" + (output3), "");
         mMood2 = gson.fromJson(json, Mood.class);
         if (mMood2 == null) {
             mRl31.setVisibility(INVISIBLE);
             mRl32.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + (mCal.get(Calendar.DAY_OF_YEAR) - 4), "");
+        json = mPrefs.getString("" + (output4), "");
         mMood3 = gson.fromJson(json, Mood.class);
         if (mMood3 == null) {
             mRl41.setVisibility(INVISIBLE);
             mRl42.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + (mCal.get(Calendar.DAY_OF_YEAR) - 5), "");
+        json = mPrefs.getString("" + (output5), "");
         mMood4 = gson.fromJson(json, Mood.class);
         if (mMood4 == null) {
             mRl51.setVisibility(INVISIBLE);
             mRl52.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + (mCal.get(Calendar.DAY_OF_YEAR) - 6), "");
+        json = mPrefs.getString("" + (output6), "");
         mMood5 = gson.fromJson(json, Mood.class);
         if (mMood5 == null) {
             mRl61.setVisibility(INVISIBLE);
             mRl62.setVisibility(INVISIBLE);
         }
 
-        json = mPrefs.getString("" + (mCal.get(Calendar.DAY_OF_YEAR) - 7), "");
+        json = mPrefs.getString("" + (output7), "");
         mMood6 = gson.fromJson(json, Mood.class);
         if (mMood6 == null) {
             mRl71.setVisibility(INVISIBLE);
@@ -136,6 +177,7 @@ public class History extends MainActivity {
         ChangeOfLayout(mRl61, mRl62, mButtonComment2, mMood5);
         ChangeOfLayout(mRl71, mRl72, mButtonComment1, mMood6);
     }
+
 
     public void ChangeOfLayout(FrameLayout mRight, FrameLayout mLeft, ImageView comment, final Mood mood) {
 
