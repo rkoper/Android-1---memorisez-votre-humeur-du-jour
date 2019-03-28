@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         String json = mPrefs.getString("" + (output3), "");
         mMood = gson.fromJson(json, Mood.class);
         if (mMood == null) {
-            mMood = new Mood(R.drawable.smiley_happy, R.color.light_sage, "", 0);
+            mMood = new Mood(R.drawable.smiley_happy, R.color.light_sage, "", 3);
         }
 
         // initialized Mood + Color + Comment + Position
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences.Editor prefsEditor = mPrefs.edit();
                 Gson gson = new Gson();
                 String json = gson.toJson(mMood);
-                prefsEditor.putString(("" + (output3)), json);
+                prefsEditor.putString(("" + (output0)), json);
                 prefsEditor.apply();
 
                 MediaPlayer mediaPlayer;
@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Gson gson = new Gson();
                 String json = gson.toJson(mMood);
-                prefsEditor.putString("" + (output3), json);
+                prefsEditor.putString("" + (output0), json);
                 prefsEditor.apply();
             }
         });
